@@ -1,11 +1,9 @@
 import { Suspense, lazy } from "react";
 import { useRoutes } from "react-router-dom";
 import { PATH } from "../constants";
-const HomePage =lazy(()=>import("../Pages/HomePage"))
+const HomePage = lazy(() => import("../Pages/HomePage"));
 function Routers() {
-  const routes = useRoutes([
-    {path:PATH.HOME  ,  element: <HomePage/>},
-  ]);
+  const routes = useRoutes([{ path: PATH.HOME, element: <HomePage /> }]);
 
   return (
     <>
