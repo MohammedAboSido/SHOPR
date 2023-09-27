@@ -63,8 +63,8 @@ export const StyledButton = styled(Button)`
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  background-color: ${({ theme }) => theme.palette.background.paper};
-  color: ${({ theme }) => theme.palette.text.primary};
+  background-color: ${({ theme }) => theme.palette.bgPrimary.main};
+  color: ${({ theme }) => theme.palette.background.paper};
   text-align: center;
   font-family: "Space Grotesk", sans-serif;
   text-transform: none;
@@ -72,6 +72,6 @@ export const StyledButton = styled(Button)`
   width: ${({ width }) => width};
   font-weight: 500;
   &:hover {
-    background-color: ${({ theme }) => theme.palette.background.paper};
+    background-color: ${({ theme }) => theme.palette.bgPrimary.main};
   }
 `;

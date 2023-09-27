@@ -4,7 +4,7 @@ import { LeftLogo, LeftWrapper } from "./style";
 const Left = ({ bgImage }) => {
   const theme = useTheme();
   return (
-    <LeftWrapper bgImage={bgImage}>
+    <LeftWrapper bimg={bgImage}>
       <LeftLogo filter={theme.palette.mode} src={img} />
     </LeftWrapper>
   );

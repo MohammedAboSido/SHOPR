@@ -2,8 +2,12 @@ import { Suspense, lazy } from "react";
 import { useRoutes } from "react-router-dom";
 import { PATH } from "../constants";
 const HomePage = lazy(() => import("../Pages/HomePage"));
+const SignInPage = lazy(() => import("../Pages/SignInPage"));
 function Routers() {
-  const routes = useRoutes([{ path: PATH.HOME, element: <HomePage /> }]);
+  const routes = useRoutes([
+    { path: PATH.HOME, element: <HomePage /> },
+    { path: PATH.LOGIN, element: <SignInPage /> },
+  ]);
 
   return (
     <>

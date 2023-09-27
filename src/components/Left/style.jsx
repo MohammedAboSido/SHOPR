@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 export const LeftWrapper = styled(Box)`
   label: LeftWrapper;
-  background: url(${({ bgImage }) => bgImage});
+  background: url(${({ bimg }) => bimg});
   width: 50vw;
   background-size: cover;
   background-repeat: no-repeat;
