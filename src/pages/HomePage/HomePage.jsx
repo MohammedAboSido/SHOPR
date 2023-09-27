@@ -7,7 +7,6 @@ import Categories from "../../components/Categories";
 import Collection from "../../components/Collection";
 import Navbar from "../../components/Navbar/Navbar";
 import Newsletter from "../../components/Newsletter/Newsletter";
-
 import Trending from "../../components/Trending/Trending";
 import Hero from "../../components/hero section/hero";
 import Instagram from "../../components/instagram section/instagram";

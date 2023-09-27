@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { AdditoinCardImg, AdditoinCardImgContainer, AdditoinCardNewPrice, AdditoinCardNewProducts, AdditoinCardOldPrice, AdditoinCardPrice, AdditoinCardTitle, AdditoinCardWrapper } from './style';
 
 const AdditoinCard = ({img,newPrice,oldPrice,active,title}) => {
@@ -18,3 +18,7 @@ const AdditoinCard = ({img,newPrice,oldPrice,active,title}) => {
 }
 
 export default AdditoinCard;
+
+
+
+
