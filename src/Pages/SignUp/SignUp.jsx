@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import img from "../../assets/images/register/registerImg.png";
+import img from "../../assets/images/register/register.png";
 import Left from "../../components/Left/Left";
 import PasswordInput from "../../components/PasswordInput";
 import { PATH } from "../../constants";
