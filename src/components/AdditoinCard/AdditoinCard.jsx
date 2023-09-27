@@ -5,7 +5,7 @@ const AdditoinCard = ({img,newPrice,oldPrice,active,title}) => {
     return (
         <AdditoinCardWrapper>
             <AdditoinCardImgContainer>
-                <AdditoinCardImg src={img}/>
+                <AdditoinCardImg src={img}/> 
             </AdditoinCardImgContainer>
             <AdditoinCardTitle>{title}</AdditoinCardTitle>
             <AdditoinCardPrice>
