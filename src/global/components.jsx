@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
+import { Field } from "formik";
 import { Link } from "react-router-dom";
 
 export const Container = styled("div")`
@@ -63,8 +64,8 @@ export const StyledButton = styled(Button)`
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  background-color: ${({ theme }) => theme.palette.background.paper};
-  color: ${({ theme }) => theme.palette.text.primary};
+  background-color: ${({ theme }) => theme.palette.bgPrimary.main};
+  color: ${({ theme }) => theme.palette.background.paper};
   text-align: center;
   font-family: "Space Grotesk", sans-serif;
   text-transform: none;
@@ -72,6 +73,39 @@ export const StyledButton = styled(Button)`
   width: ${({ width }) => width};
   font-weight: 500;
   &:hover {
-    background-color: ${({ theme }) => theme.palette.background.paper};
+    background-color: ${({ theme }) => theme.palette.bgPrimary.main};
   }
+`;
+
+export const MainInput = styled(Field)`
+  label: MainInput;
+  background-color: ${({ theme }) => theme.palette.background.paper};
+  display: flex;
+  height: 52px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  min-width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.input.primary};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.palette.input.primary};
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+  }
+`;
+export const CheckBoxInput = styled(Field)`
+  label: CheckBoxInput;
+  outline: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #605f5f;
 `;
