@@ -30,5 +30,4 @@ const HomePage = () => {
     </HomePageWrapper>
   );
 };
-
 export default HomePage;
