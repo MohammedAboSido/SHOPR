@@ -91,6 +91,7 @@ export const MainInput = styled(Field)`
   outline: none;
   border: none;
   border-bottom: 1px solid ${({ theme }) => theme.palette.input.primary};
+  color: ${({ theme }) => theme.palette.bgPrimary.main};
 
   &::placeholder {
     color: ${({ theme }) => theme.palette.input.primary};
