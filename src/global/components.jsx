@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const Container = styled("div")`
@@ -53,4 +54,24 @@ export const Typography = styled.p`
   color: ${(props) => props.color};
   margin: ${(props) => props.margin};
   text-align: ${(props) => props.textalign};
+`;
+
+export const StyledButton = styled(Button)`
+  label: StyledButton;
+  display: flex;
+  padding: 19px 44px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: ${({ theme }) => theme.palette.background.paper};
+  color: ${({ theme }) => theme.palette.text.primary};
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: none;
+  font-size: 22px;
+  width: ${({ width }) => width};
+  font-weight: 500;
+  &:hover {
+    background-color: ${({ theme }) => theme.palette.background.paper};
+  }
 `;
