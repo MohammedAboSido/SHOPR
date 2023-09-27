@@ -8,41 +8,39 @@ const globalStyle = (theme) => css`
     font-family: "Inter", sans-serif;
   }
   body {
-background-color: white;
+    background-color: white;
   }
 
   a {
     text-decoration: none;
   }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
 
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-.myswiper {
+  .myswiper {
     background-color: red;
-}
-
-
+  }
 `;
 
 export default globalStyle;
