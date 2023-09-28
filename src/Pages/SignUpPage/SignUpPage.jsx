@@ -26,13 +26,30 @@ import {
 const SignUp = () => {
   return (
     <>
-      <SignUpWrapper>
+      <SignUpWrapper
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+        }}
+      >
         <Left bgImg={img} />
-        <Right>
-          <RightContainer>
+        <Right
+          sx={{
+            width: { xs: "100%", md: "50vw", lg: "50vw" },
+            height: { xs: "auto", md: "auto", lg: "1080px" },
+            padding: { xs: "16px", md: "20px", lg: "0" },
+          }}
+        >
+          <RightContainer
+            sx={{
+              width: { xs: "100%", md: "50vw", lg: "456px" },
+              height: { xs: "auto", md: "auto", lg: "auto" },
+            }}
+          >
             <SignUpTitle>Sign up</SignUpTitle>
             <SignUpDetails>
-              <SignInAccount>Already have an account?</SignInAccount>
+              <SignInAccount sx={{ fontSize: { xs: "14px", sm: "16px" } }}>
+                Already have an account?
+              </SignInAccount>
               <SignUpLink to={PATH.LOGIN}>Sign in</SignUpLink>
             </SignUpDetails>
             <Formik
@@ -85,8 +102,27 @@ const SignUp = () => {
 
                     <CheckboxDetails htmlFor="checkbox">
                       I agree with
-                      <CheckboxStrong>Privacy Policy</CheckboxStrong> and
-                      <CheckboxStrong>Terms of Use</CheckboxStrong>
+                      <CheckboxStrong
+                        sx={{
+                          fontSize: {
+                            xs: "10px",
+                            sm: "15px",
+                          },
+                        }}
+                      >
+                        Privacy Policy
+                      </CheckboxStrong>
+                      and
+                      <CheckboxStrong
+                        sx={{
+                          fontSize: {
+                            xs: "10px",
+                            sm: "15px",
+                          },
+                        }}
+                      >
+                        Terms of Use
+                      </CheckboxStrong>
                     </CheckboxDetails>
                   </CheckboxWrapper>
                   {errors.check && touched.check ? (

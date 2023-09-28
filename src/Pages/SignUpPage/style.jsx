@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 export const SignUpWrapper = styled(Box)`
   label: SignUpWrapper;
   display: flex;
+  background-color: ${({ theme }) => theme.palette.background.paper};
+  min-height: 100vh;
 `;
 export const Right = styled(Box)`
   label: Right;
@@ -71,6 +73,11 @@ export const CheckboxDetails = styled("label")`
   font-weight: 400;
   display: flex;
   align-items: center;
+  gap: 1px;
+  @media screen and (max-width: 300px) {
+    font-size: 9px;
+    font-weight: 300;
+  }
 `;
 export const CheckboxStrong = styled(Typography)`
   label: CheckboxStrong;
@@ -78,6 +85,7 @@ export const CheckboxStrong = styled(Typography)`
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
+  padding: 0 1px;
 `;
 export const FormikForm = styled(Form)`
   label: FormikForm;
