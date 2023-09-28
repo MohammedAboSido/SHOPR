@@ -67,12 +67,13 @@ export const CheckboxWrapper = styled(Box)`
 `;
 export const CheckboxDetails = styled("label")`
   label: CheckboxDetails;
-  color: var(--black-600, #605f5f);
+  color: #605f5f;
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1px;
   @media screen and (max-width: 300px) {
     font-size: 9px;
