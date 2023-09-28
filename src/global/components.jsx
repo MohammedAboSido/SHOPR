@@ -75,6 +75,10 @@ export const StyledButton = styled(Button)`
   &:hover {
     background-color: ${({ theme }) => theme.palette.bgPrimary.main};
   }
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
+    padding: 9px 24px;
+  }
 `;
 
 export const MainInput = styled(Field)`

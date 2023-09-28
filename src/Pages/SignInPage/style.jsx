@@ -6,6 +6,7 @@ export const SignInPageWrapper = styled(Box)`
   label: SignInPageWrapper;
   background-color: ${({ theme }) => theme.palette.background.paper};
   display: flex;
+  min-height: 100vh;
 `;
 export const SignInPageRight = styled(Box)`
   label: SignInPageRight;
@@ -41,6 +42,7 @@ export const SignInPageDetails = styled(Box)`
   label: SignInPageDetails;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
 `;
 
@@ -49,6 +51,8 @@ export const SignInRememberedWrapper = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 export const SignInRememberedLeft = styled(Box)`
   label: SignInRememberedLeft;
@@ -82,6 +86,9 @@ export const RememberedTitle = styled("label")`
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 export const ForgotPasswordLink = styled(Link)`
   label: ForgotPasswordLink;
@@ -89,6 +96,9 @@ export const ForgotPasswordLink = styled(Link)`
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 export const SignInPageAccount = styled(Typography)`
   label: SignInPageAccount;
@@ -103,4 +113,7 @@ export const SignUpLink = styled(Link)`
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
