@@ -27,14 +27,35 @@ import {
 } from "./style";
 const SignInPage = () => {
   return (
-    <SignInPageWrapper>
+    <SignInPageWrapper sx={{ flexDirection: { xs: "column", md: "row" } }}>
       <Left bgImg={signInImage} />
-      <SignInPageRight>
-        <SignInPageContainer>
+      <SignInPageRight
+        sx={{
+          width: { xs: "100%", md: "50vw" },
+          padding: { xs: "16px", md: "100px 50px", lg: "220px 0" },
+        }}
+      >
+        <SignInPageContainer
+          sx={{
+            width: { xs: "100%", lg: "456px" },
+          }}
+        >
           <SignInPageHeader>
-            <SignInPageTitle variant="h3">Sign in</SignInPageTitle>
+            <SignInPageTitle
+              variant="h3"
+              sx={{
+                fontSize: { xs: "26px", md: "40px" },
+              }}
+            >
+              Sign in
+            </SignInPageTitle>
             <SignInPageDetails>
-              <SignInPageAccount variant="body2">
+              <SignInPageAccount
+                variant="body2"
+                sx={{
+                  fontSize: { xs: "14px", md: "16px" },
+                }}
+              >
                 Don’t have an accout yet?
               </SignInPageAccount>
               <SignUpLink to={PATH.REGISTER}>Sign up</SignUpLink>
