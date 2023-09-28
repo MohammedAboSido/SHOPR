@@ -42,10 +42,15 @@ const SignUp = () => {
           <RightContainer
             sx={{
               width: { xs: "100%", md: "50vw", lg: "456px" },
-              height: { xs: "auto", md: "auto", lg: "auto" },
             }}
           >
-            <SignUpTitle>Sign up</SignUpTitle>
+            <SignUpTitle
+              sx={{
+                fontSize: { xs: "26px", md: "40px" },
+              }}
+            >
+              Sign up
+            </SignUpTitle>
             <SignUpDetails>
               <SignInAccount sx={{ fontSize: { xs: "14px", sm: "16px" } }}>
                 Already have an account?
