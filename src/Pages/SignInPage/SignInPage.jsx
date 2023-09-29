@@ -1,10 +1,14 @@
+import { Alert, AlertTitle, CircularProgress } from "@mui/material";
 import { Formik } from "formik";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import signInImage from "../../assets/images/login/login.png";
 import {
   CheckBoxInput,
   MainInput,
   StyledButton,
 } from "../../global/components";
+import useApi from "../../hooks/useApi";
 import Left from "./../../components/Left/Left";
 import { PATH } from "./../../constants/index";
 import { schema } from "./../../utils/loginSchema";
@@ -26,6 +30,16 @@ import {
   SignUpLink,
 } from "./style";
 const SignInPage = () => {
+  const { isLoading, error, postedData, post } = useApi(
+    "https://e-commerce-api-fylh.onrender.com/api/login"
+  );
+  const navigate = useNavigate();
+  useEffect(() => {
+    postedData?.length > 0 &&
+      localStorage.setItem("user", JSON.stringify(postedData));
+    postedData?.length > 0 && navigate(PATH.HOME);
+  }, [navigate, postedData, postedData.length]);
+
   return (
     <SignInPageWrapper sx={{ flexDirection: { xs: "column", md: "row" } }}>
       <Left bgImg={signInImage} />
@@ -49,6 +63,12 @@ const SignInPage = () => {
             >
               Sign in
             </SignInPageTitle>
+            {error.length > 0 && (
+              <Alert severity="error">
+                <AlertTitle>Error</AlertTitle>
+                {error} — <strong>check it out!</strong>
+              </Alert>
+            )}
             <SignInPageDetails>
               <SignInPageAccount
                 variant="body2"
@@ -62,23 +82,22 @@ const SignInPage = () => {
             </SignInPageDetails>
           </SignInPageHeader>
           <Formik
-            initialValues={{ username: "", password: "", remember: false }}
+            initialValues={{ email: "", password: "", remember: false }}
             validationSchema={schema}
-            onSubmit={(values, { setSubmitting }) => {
-              console.log(values);
-              setSubmitting(false);
+            onSubmit={(values) => {
+              post(values);
             }}
           >
-            {({ errors, touched, handleSubmit, isSubmitting }) => (
+            {({ errors, touched, handleSubmit }) => (
               <FormWrapper onSubmit={handleSubmit}>
                 <FormInputWrapper>
                   <MainInput
                     type="text"
-                    name="username"
-                    placeholder="Your username or email"
+                    name="email"
+                    placeholder="Your email"
                   />
-                  {errors.username && touched.username && (
-                    <InputErrorMessage>{errors.username}</InputErrorMessage>
+                  {errors.email && touched.email && (
+                    <InputErrorMessage>{errors.email}</InputErrorMessage>
                   )}
                 </FormInputWrapper>
                 <FormInputWrapper>
@@ -106,12 +125,8 @@ const SignInPage = () => {
                     Forgot password?
                   </ForgotPasswordLink>
                 </SignInRememberedWrapper>
-                <StyledButton
-                  type="submit"
-                  disabled={isSubmitting}
-                  width={"100%"}
-                >
-                  Sign in
+                <StyledButton type="submit" width={"100%"} disabled={isLoading}>
+                  {isLoading ? <CircularProgress size={"2rem"} /> : "Sign in"}
                 </StyledButton>
               </FormWrapper>
             )}
