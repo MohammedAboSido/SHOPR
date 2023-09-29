@@ -23,7 +23,19 @@ import {
   SignUpTitle,
   SignUpWrapper,
 } from "./style";
+
+import { Alert, CircularProgress } from "@mui/material";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import useApi from "../../hooks/useApi";
 const SignUp = () => {
+  const { isLoading, error, postedData, post } = useApi(
+    "https://e-commerce-api-fylh.onrender.com/api/register"
+  );
+  const navigate = useNavigate();
+  useEffect(() => {
+    postedData.length > 0 && navigate(PATH.LOGIN);
+  }, [navigate, postedData.length]);
   return (
     <>
       <SignUpWrapper
@@ -32,10 +44,11 @@ const SignUp = () => {
         }}
       >
         <Left bgImg={img} />
+
         <Right
           sx={{
             width: { xs: "100%", md: "50vw", lg: "50vw" },
-            height: { xs: "auto", md: "auto", lg: "1080px" },
+            height: { xs: "auto", sm: "110vh", md: "auto", lg: "1080px" },
             padding: { xs: "16px", md: "20px", lg: "0" },
           }}
         >
@@ -51,6 +64,11 @@ const SignUp = () => {
             >
               Sign up
             </SignUpTitle>
+            {error && (
+              <Alert sx={{ width: "100%" }} severity="error">
+                {error}
+              </Alert>
+            )}
             <SignUpDetails>
               <SignInAccount sx={{ fontSize: { xs: "14px", sm: "16px" } }}>
                 Already have an account?
@@ -66,13 +84,13 @@ const SignUp = () => {
                 check: false,
               }}
               onSubmit={(values) => {
-                console.log(
-                  values.email,
-                  values.password,
-                  values.username,
-                  values.name,
-                  values.check
-                );
+                const body = {
+                  name: values.name,
+                  email: values.email,
+                  password: values.password,
+                };
+                post(body);
+                console.log(postedData);
               }}
               validationSchema={schema}
             >
@@ -104,7 +122,6 @@ const SignUp = () => {
                   ) : null}
                   <CheckboxWrapper>
                     <CheckBoxInput type="checkbox" name="check" id="checkbox" />
-
                     <CheckboxDetails htmlFor="checkbox">
                       I agree with
                       <CheckboxStrong
@@ -133,9 +150,12 @@ const SignUp = () => {
                   {errors.check && touched.check ? (
                     <Danger>{errors.check}</Danger>
                   ) : null}
-
-                  <StyledButton type="submit" width={"100%"}>
-                    Signup
+                  <StyledButton
+                    disabled={isLoading}
+                    type="submit"
+                    width={"100%"}
+                  >
+                    {isLoading ? <CircularProgress size={"2rem"} /> : "Signup"}
                   </StyledButton>
                 </FormikForm>
               )}
