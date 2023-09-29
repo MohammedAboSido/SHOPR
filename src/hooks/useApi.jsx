@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 const useApi = (url) => {
   const [data, setData] = useState([]);
@@ -7,7 +7,7 @@ const useApi = (url) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const getDataHandler = useCallback(async () => {
+  const get = useCallback(async () => {
     try {
       setIsLoading(true);
       const res = await axios.get(url);
@@ -31,11 +31,7 @@ const useApi = (url) => {
     }
   };
 
-  useEffect(() => {
-    getDataHandler();
-  }, [getDataHandler]);
-
-  return { data, isLoading, error, postedData, post };
+  return { data, isLoading, error, postedData, post, get };
 };
 
 export default useApi;
