@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   MainProductImg,
   MainProductWrapper,
@@ -9,16 +9,20 @@ import {
 } from "./style";
 
 const ProductShow = ({ data }) => {
-  const [product, setProduct] = useState(data.thumbnail);
+  const [product, setProduct] = useState("");
+  useEffect(() => {
+    setProduct(data.thumbnail);
+  }, [data.thumbnail]);
+
   return (
     <ProductShowWrapper>
       <MainProductWrapper>
         <MainProductImg src={product} />
       </MainProductWrapper>
       <ProductsList>
-        {data.images.map((item) => {
+        {data.images?.map((item) => {
           return (
-            <ProductContainer key={item} onClick={() => setProduct([item])}>
+            <ProductContainer key={item} onClick={() => setProduct(item)}>
               <ProductImg src={item} />
             </ProductContainer>
           );
