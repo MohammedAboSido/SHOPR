@@ -63,7 +63,7 @@ export const StyledButton = styled(Button)`
   padding: ${({ padding }) => (padding ? padding : "19px 44px")};
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "6px")};
   background-color: ${({ theme }) => theme.palette.bgPrimary.main};
   color: ${({ theme }) => theme.palette.background.paper};
   text-align: center;
@@ -141,4 +141,15 @@ export const BreadCrumbCurrentPage = styled(Typography)`
   font-size: 12px;
   font-weight: 400;
   opacity: 0.8;
+`;
+export const SecondaryButton = styled(StyledButton)`
+  label: SecondaryButton;
+  border: 1px solid ${({ theme }) => theme.palette.bgPrimary.main};
+  background-color: transparent;
+  color: ${({ theme }) => theme.palette.bgPrimary.main};
+  border-radius: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
 `;

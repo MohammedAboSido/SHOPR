@@ -123,3 +123,7 @@ export const ProductFeaturesSwatches = styled(Box)`
   label: ProductFeaturesSwatches;
   margin: 24px 0;
 `;
+export const ProductFeaturesCart = styled(Box)`
+  label: ProductFeaturesCart;
+  margin: 24px 0;
+`;
