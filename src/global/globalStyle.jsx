@@ -8,7 +8,7 @@ const globalStyle = (theme) => css`
     font-family: "Inter", sans-serif;
   }
   body {
-    background-color: white;
+    background-color: ${theme.palette.background.paper};
   }
 
   a {

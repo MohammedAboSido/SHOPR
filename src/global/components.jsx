@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Field } from "formik";
 import { Link } from "react-router-dom";
 
@@ -113,4 +113,32 @@ export const CheckBoxInput = styled(Field)`
   height: 18px;
   border-radius: 4px;
   border: 1px solid #605f5f;
+`;
+export const ContainerTwo = styled(Box)`
+  label: ContainerTwo;
+  width: ${({ width }) => width};
+  margin: 0 auto;
+`;
+
+export const BreadCrumbLink = styled(Link)`
+  label: BreadCrumbLink;
+  color: #605f5f;
+  display: flex;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+  left: 5px;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const BreadCrumbCurrentPage = styled(Typography)`
+  label: BreadCrumbCurrentPage;
+  color: #605f5f;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8;
 `;
