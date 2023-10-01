@@ -1,8 +1,8 @@
+import LoginIcon from "@mui/icons-material/Login";
 import { BiSearch, BiShoppingBag } from "react-icons/bi";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { RxPerson } from "react-icons/rx";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import { Container } from "../../global/components";
 import { PATH } from "./../../constants/index";
 import {
@@ -15,8 +15,8 @@ import {
   NavbarLogoImgTwo,
   NavbarWrapper,
 } from "./style";
-
 const Navbar = ({ img1, img2 }) => {
+  const navigate = useNavigate();
   return (
     <NavbarBg>
       <Container>
@@ -33,7 +33,7 @@ const Navbar = ({ img1, img2 }) => {
               <Link to={PATH.PRODUCTS}>Product</Link>
             </NavbarLink>
             <NavbarLink>
-              <Link>Category</Link>
+              <Link to={PATH.CATEGORY}>Category</Link>
             </NavbarLink>
           </NavbarLinks>
           <NavbarIcons>
@@ -41,7 +41,8 @@ const Navbar = ({ img1, img2 }) => {
               <BiSearch />
             </NavbarIcon>
             <NavbarIcon>
-              <RxPerson />
+              <LoginIcon onClick={() => navigate(PATH.LOGIN)} />
+              <RxPerson onClick={() => navigate(PATH.PROFILE)} />
             </NavbarIcon>
             <NavbarIcon>
               <BiShoppingBag />

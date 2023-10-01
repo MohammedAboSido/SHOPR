@@ -28,16 +28,16 @@ import {
   TimerBlocks,
 } from "./style";
 
-const ProductFeatures = () => {
+const ProductFeatures = ({ data }) => {
   const breadcrumbs = [
     <BreadCrumbLink key="1" to={PATH.HOME}>
       Home
     </BreadCrumbLink>,
-    <BreadCrumbLink key="2" to={PATH.HOME}>
-      Clothing
+    <BreadCrumbLink key="2" to={PATH.CATEGORY}>
+      {data.category}
     </BreadCrumbLink>,
     <BreadCrumbCurrentPage variant="body2" key="3">
-      Huishō Pijama
+      {data.name}
     </BreadCrumbCurrentPage>,
   ];
 
@@ -47,28 +47,31 @@ const ProductFeatures = () => {
         <Breadcrumbs separator="›" aria-label="breadcrumb">
           {breadcrumbs}
         </Breadcrumbs>
-        <ProductName variant="body2">Huishō Pijama</ProductName>
+        <ProductName variant="body2">{data.name}</ProductName>
         <ProductDescription variant="body2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt et dolore
+          {data.description}
         </ProductDescription>
         <ProductRating>
           <Rating
             sx={{ width: "88px", fontSize: "16px" }}
             name="read-only"
-            value={5}
+            value={data.rate}
             readOnly
           />
-          <ProductReviews variant="body2">23 Reviews</ProductReviews>
+          <ProductReviews variant="body2">
+            {data.reviewCount} Reviews
+          </ProductReviews>
         </ProductRating>
         <ProductPrice>
-          <ProductNewPrice variant="body2">$86.00</ProductNewPrice>
-          <ProductOldPrice variant="body2">$104.00</ProductOldPrice>
+          <ProductNewPrice variant="body2">
+            ${(data.price - data.price * (data.discount / 100)).toFixed(2)}
+          </ProductNewPrice>
+          <ProductOldPrice variant="body2">${data.price}</ProductOldPrice>
         </ProductPrice>
         <ProductView>
           <VisibilityOutlinedIcon />
           <ProductViewDescription variant="body2">
-            <ProductViewPeople variant="body2">32</ProductViewPeople>
+            <ProductViewPeople variant="body2">{data.view}</ProductViewPeople>
             people are looking at this product
           </ProductViewDescription>
         </ProductView>
