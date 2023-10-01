@@ -1,11 +1,8 @@
 import { Rating } from "@mui/material";
-import { BiHeart, BiHelpCircle, BiShareAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import ProductActions from "./../../../../components/ProductActions/ProductActions";
 import { StyledButton } from "./../../../../global/components";
 import {
-  ShopProductCardBelow,
-  ShopProductCardBelowItem,
-  ShopProductCardBelowItemTitle,
   ShopProductCardDescription,
   ShopProductCardHeader,
   ShopProductCardImg,
@@ -81,28 +78,7 @@ const ShopProductCard = ({
         >
           Add to cart
         </StyledButton>
-        <ShopProductCardBelow
-          sx={{
-            display: { xs: "none", md: "flex" },
-          }}
-        >
-          <ShopProductCardBelowItem>
-            <BiHeart />
-            <ShopProductCardBelowItemTitle>
-              Wishlist
-            </ShopProductCardBelowItemTitle>
-          </ShopProductCardBelowItem>
-          <ShopProductCardBelowItem>
-            <BiHelpCircle />
-            <ShopProductCardBelowItemTitle>
-              Ask question
-            </ShopProductCardBelowItemTitle>
-          </ShopProductCardBelowItem>
-          <ShopProductCardBelowItem>
-            <BiShareAlt />
-            <ShopProductCardBelowItemTitle>Share</ShopProductCardBelowItemTitle>
-          </ShopProductCardBelowItem>
-        </ShopProductCardBelow>
+        <ProductActions />
       </ShopProductCardRight>
     </ShopProductCardWrapper>
   );

@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 
 export const ShopProductCardWrapper = styled(Box)`
   label: ShopProductCardWrapper;
@@ -71,26 +70,4 @@ export const ShopProductCardDescription = styled(Typography)`
   font-size: 16px;
   font-weight: 400;
   width: 612px;
-`;
-
-export const ShopProductCardBelow = styled(Box)`
-  label: ShopProductCardBelow;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-`;
-export const ShopProductCardBelowItem = styled(Box)`
-  label: ShopProductCardBelowItem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  gap: 4px;
-  color: ${({ theme }) => theme.palette.bgPrimary.main};
-`;
-export const ShopProductCardBelowItemTitle = styled(Link)`
-  label: ShopProductCardBelowItemTitle;
-  color: ${({ theme }) => theme.palette.bgPrimary.main};
-  font-family: Space Grotesk;
-  font-size: 14px;
-  font-weight: 500;
 `;
