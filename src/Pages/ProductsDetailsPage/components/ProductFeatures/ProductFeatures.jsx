@@ -48,12 +48,26 @@ const ProductFeatures = ({ data }) => {
   ];
 
   return (
-    <ProductFeaturesWrapper>
-      <ProductFeaturesDetails>
+    <ProductFeaturesWrapper
+      sx={{
+        width: { xs: "100%", md: "456px" },
+        margin: { xs: "24px 0", md: "0" },
+      }}
+    >
+      <ProductFeaturesDetails
+        sx={{
+          width: { xs: "100%", md: "456px" },
+        }}
+      >
         <Breadcrumbs separator="›" aria-label="breadcrumb">
           {breadcrumbs}
         </Breadcrumbs>
-        <ProductName variant="body2">{data.name}</ProductName>
+        <ProductName
+          sx={{ fontSize: { xs: "26px", md: "34px" } }}
+          variant="body2"
+        >
+          {data.name}
+        </ProductName>
         <ProductDescription variant="body2">
           {data.description}
         </ProductDescription>
@@ -69,7 +83,10 @@ const ProductFeatures = ({ data }) => {
           </ProductReviews>
         </ProductRating>
         <ProductPrice>
-          <ProductNewPrice variant="body2">
+          <ProductNewPrice
+            variant="body2"
+            sx={{ fontSize: { xs: "22px", md: "26px" } }}
+          >
             ${(data.price - data.price * (data.discount / 100)).toFixed(2)}
           </ProductNewPrice>
           <ProductOldPrice variant="body2">${data.price}</ProductOldPrice>
@@ -77,7 +94,12 @@ const ProductFeatures = ({ data }) => {
         <ProductView>
           <VisibilityOutlinedIcon />
           <ProductViewDescription variant="body2">
-            <ProductViewPeople variant="body2">{data.view}</ProductViewPeople>
+            <ProductViewPeople
+              sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              variant="body2"
+            >
+              {data.view}
+            </ProductViewPeople>
             people are looking at this product
           </ProductViewDescription>
         </ProductView>
@@ -135,7 +157,7 @@ const ProductFeatures = ({ data }) => {
             padding="10px 26px"
             width="100%"
             fontSize="18px"
-            sx={{ height: "52px" }}
+            sx={{ height: "52px", display: { xs: "none", md: "flex" } }}
           >
             Add To Cart
           </SecondaryButton>

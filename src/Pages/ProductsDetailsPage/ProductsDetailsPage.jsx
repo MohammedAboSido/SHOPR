@@ -12,8 +12,8 @@ const ProductsDetailsPage = () => {
   return (
     <ProductsDetailsPageWrapper>
       <Navbar img1={img1} img2={img2} />
-      <ContainerTwo width="1108px">
-        <ProductsDetailsPageContainer width="1108px">
+      <ContainerTwo>
+        <ProductsDetailsPageContainer>
           <ProductDetails />
         </ProductsDetailsPageContainer>
       </ContainerTwo>

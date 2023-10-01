@@ -13,6 +13,12 @@ export const StyledInputRoot = styled("div")`
   color: #121212;
   background-color: #f5f5f5;
   align-items: center;
+
+  @media screen and (max-width: 900px) {
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+  }
 `;
 
 export const StyledInput = styled("input")`

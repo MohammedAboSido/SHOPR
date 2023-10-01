@@ -7,15 +7,18 @@ export const ProductShowWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1 570px;
 `;
 export const MainProductWrapper = styled(Box)`
   label: MainProductWrapper;
-  width: 100%;
+  flex: 1 570px;
+  height: 760px;
 `;
 export const MainProductImg = styled("img")`
   label: MainProductImg;
+  min-width: 100%;
   width: 100%;
-  height: 760px;
+  height: 100%;
   object-fit: cover;
 `;
 export const ProductsList = styled(Box)`

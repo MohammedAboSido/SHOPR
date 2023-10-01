@@ -116,8 +116,13 @@ export const CheckBoxInput = styled(Field)`
 `;
 export const ContainerTwo = styled(Box)`
   label: ContainerTwo;
-  width: ${({ width }) => width};
+  max-width: 1108px;
+  width: 85%;
   margin: 0 auto;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const BreadCrumbLink = styled(Link)`

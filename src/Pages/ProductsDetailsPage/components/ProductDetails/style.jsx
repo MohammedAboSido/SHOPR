@@ -6,4 +6,6 @@ export const ProductDetailsWrapper = styled(Box)`
   margin: 52px 0;
   display: flex;
   justify-content: space-between;
+  gap: 82px;
+  flex-wrap: wrap;
 `;
