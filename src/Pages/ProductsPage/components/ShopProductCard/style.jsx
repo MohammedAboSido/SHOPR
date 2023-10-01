@@ -14,6 +14,7 @@ export const ShopProductCardImgContainer = styled(Box)`
   display: flex;
   width: 228px;
   height: 304px;
+  cursor: pointer;
 `;
 export const ShopProductCardImg = styled("img")`
   label: ShopProductCardImg;

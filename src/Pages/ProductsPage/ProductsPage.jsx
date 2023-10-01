@@ -59,7 +59,7 @@ const ProductsPage = () => {
                   discount={item.discount}
                   price={item.price}
                   rate={item.rate}
-                  img={item.img}
+                  img={item.thumbnail}
                   id={item.id}
                   key={item.id}
                 />
