@@ -1,9 +1,13 @@
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import { Breadcrumbs, Rating, Stack, Typography } from "@mui/material";
+import { Box, Breadcrumbs, Rating, Stack, Typography } from "@mui/material";
+
+import InputNumber from "../../../../components/InputNumber/InputNumber";
 import { PATH } from "../../../../constants";
 import {
   BreadCrumbCurrentPage,
   BreadCrumbLink,
+  SecondaryButton,
+  StyledButton,
 } from "../../../../global/components";
 import SelectColor from "../SelectColor";
 import SelectSize from "../SelectSize";
@@ -11,6 +15,7 @@ import TimerBlock from "../TimerBlock";
 import {
   HurryUp,
   ProductDescription,
+  ProductFeaturesCart,
   ProductFeaturesDetails,
   ProductFeaturesSwatches,
   ProductFeaturesTimer,
@@ -115,15 +120,36 @@ const ProductFeatures = ({ data }) => {
           <SelectSize />
         </Stack>
       </ProductFeaturesSwatches>
+      <ProductFeaturesCart>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "16px",
+            mb: "16px",
+          }}
+        >
+          <InputNumber />
+          <SecondaryButton
+            padding="10px 26px"
+            width="100%"
+            fontSize="18px"
+            sx={{ height: "52px" }}
+          >
+            Add To Cart
+          </SecondaryButton>
+        </Box>
+        <StyledButton
+          padding="10px 26px"
+          width="100%"
+          fontSize="18px"
+          borderRadius="0"
+        >
+          Add To Cart
+        </StyledButton>
+      </ProductFeaturesCart>
     </ProductFeaturesWrapper>
   );
 };
 
 export default ProductFeatures;
-
-{
-  {
-    /*
-<ProductFeaturesCart></ProductFeaturesCart>  */
-  }
-}
