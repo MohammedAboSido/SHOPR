@@ -1,8 +1,10 @@
 import { BiSearch, BiShoppingBag } from "react-icons/bi";
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { RxPerson } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 import { Container } from "../../global/components";
+import { PATH } from "./../../constants/index";
 import {
   NavbarBg,
   NavbarIcon,
@@ -25,10 +27,10 @@ const Navbar = ({ img1, img2 }) => {
           </NavbarLogo>
           <NavbarLinks>
             <NavbarLink>
-              <Link>Home</Link>
+              <Link to={PATH.HOME}>Home</Link>
             </NavbarLink>
             <NavbarLink>
-              <Link>Product</Link>
+              <Link to={PATH.PRODUCTS}>Product</Link>
             </NavbarLink>
             <NavbarLink>
               <Link>Category</Link>
@@ -43,6 +45,9 @@ const Navbar = ({ img1, img2 }) => {
             </NavbarIcon>
             <NavbarIcon>
               <BiShoppingBag />
+            </NavbarIcon>
+            <NavbarIcon>
+              <HiOutlineMenuAlt4 />
             </NavbarIcon>
           </NavbarIcons>
         </NavbarWrapper>
