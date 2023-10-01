@@ -63,7 +63,7 @@ export const StyledButton = styled(Button)`
   padding: ${({ padding }) => (padding ? padding : "19px 44px")};
   justify-content: center;
   align-items: center;
-  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "6px")};
+  border-radius: ${({ radius }) => (radius ? radius : "6px")};
   background-color: ${({ theme }) => theme.palette.bgPrimary.main};
   color: ${({ theme }) => theme.palette.background.paper};
   text-align: center;

@@ -17,7 +17,7 @@ const SelectSize = () => {
       onChange={handleChange}
       aria-label="disabled tabs example"
       sx={{
-        minHeight: "100px",
+        minHeight: "38px",
         ".css-1aquho2-MuiTabs-indicator, .css-3sx0hq-MuiTabs-indicator": {
           display: "none",
         },

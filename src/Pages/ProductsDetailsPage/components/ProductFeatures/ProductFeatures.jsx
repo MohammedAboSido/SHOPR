@@ -2,6 +2,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { Box, Breadcrumbs, Rating, Stack, Typography } from "@mui/material";
 
 import InputNumber from "../../../../components/InputNumber/InputNumber";
+import ProductActions from "../../../../components/ProductActions/ProductActions";
 import { PATH } from "../../../../constants";
 import {
   BreadCrumbCurrentPage,
@@ -60,7 +61,7 @@ const ProductFeatures = ({ data }) => {
           <Rating
             sx={{ width: "88px", fontSize: "16px" }}
             name="read-only"
-            value={data.rate}
+            value={+data.rate}
             readOnly
           />
           <ProductReviews variant="body2">
@@ -143,10 +144,13 @@ const ProductFeatures = ({ data }) => {
           padding="10px 26px"
           width="100%"
           fontSize="18px"
-          borderRadius="0"
+          radius="0"
         >
           Add To Cart
         </StyledButton>
+        <Box sx={{ mt: "24px" }}>
+          <ProductActions />
+        </Box>
       </ProductFeaturesCart>
     </ProductFeaturesWrapper>
   );
