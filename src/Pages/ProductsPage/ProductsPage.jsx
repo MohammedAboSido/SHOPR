@@ -1,6 +1,8 @@
-import product1 from "../../assets/images/shop/shop-product-1.png";
+import { Alert, AlertTitle, CircularProgress } from "@mui/material";
+import { useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import { Container } from "../../global/components";
+import useApi from "./../../hooks/useApi";
 import ShopHeader from "./components/ShopHeader";
 import ShopProductCard from "./components/ShopProductCard";
 import {
@@ -10,6 +12,14 @@ import {
   ShopProductCards,
 } from "./style";
 const ProductsPage = () => {
+  const { isLoading, error, data, get } = useApi(
+    "https://e-commerce-api-fylh.onrender.com/api/products"
+  );
+
+  useEffect(() => {
+    get();
+  }, []);
+
   return (
     <Layout>
       <ProductsPageWrapper>
@@ -20,51 +30,40 @@ const ProductsPage = () => {
               variant="body2"
               sx={{ fontSize: { xs: "14px", md: "16px" } }}
             >
-              134 products
+              {data.length} products
             </ProductCount>
           </ProductsPageProductCounts>
           <ShopProductCards sx={{ flexDirection: { sm: "row", md: "column" } }}>
-            <ShopProductCard
-              title={"iPhone Charger Fast Charging"}
-              description={
-                "USB C to Lightning Cable 3 Pack 6 FT [MFi Certified] iPhone Cable Type C to Lightning Cable Fast Charging Cord Compatible with iPhone 14 13 12 11 Pro Max X Plus and More"
-              }
-              discount={72}
-              price={24.99}
-              rate={5}
-              img={product1}
-              id={"1"}
-            />
-            <ShopProductCard
-              title={"iPhone Charger Fast Charging"}
-              description={
-                "USB C to Lightning Cable 3 Pack 6 FT [MFi Certified] iPhone Cable Type C to Lightning Cable Fast Charging Cord Compatible with iPhone 14 13 12 11 Pro Max X Plus and More"
-              }
-              discount={72}
-              price={24.99}
-              rate={5}
-              img={product1}
-            />
-            <ShopProductCard
-              title={"iPhone Charger Fast Charging"}
-              description={
-                "USB C to Lightning Cable 3 Pack 6 FT [MFi Certified] iPhone Cable Type C to Lightning Cable Fast Charging Cord Compatible with iPhone 14 13 12 11 Pro Max X Plus and More"
-              }
-              discount={72}
-              price={24.99}
-              rate={5}
-              img={product1}
-            />
-            <ShopProductCard
-              title={"iPhone Charger Fast Charging"}
-              description={
-                "USB C to Lightning Cable 3 Pack 6 FT [MFi Certified] iPhone Cable Type C to Lightning Cable Fast Charging Cord Compatible with iPhone 14 13 12 11 Pro Max X Plus and More"
-              }
-              discount={72}
-              price={24.99}
-              rate={5}
-              img={product1}
-            />
+            {isLoading && (
+              <CircularProgress
+                size={"2rem"}
+                sx={{
+                  position: "relative",
+                  left: "50%",
+                  top: "50%",
+                  translate: "-50% -50%",
+                }}
+              />
+            )}
+            {error.length > 0 && (
+              <Alert severity="error" sx={{ width: "100%" }}>
+                <AlertTitle>Error</AlertTitle>
+                {error} — <strong>check it out!</strong>
+              </Alert>
+            )}
+            {data.length > 0 &&
+              data.map((item) => (
+                <ShopProductCard
+                  title={item.title}
+                  description={item.description}
+                  discount={item.discount}
+                  price={item.price}
+                  rate={item.rate}
+                  img={item.img}
+                  id={item.id}
+                  key={item.id}
+                />
+              ))}
           </ShopProductCards>
         </Container>
       </ProductsPageWrapper>
