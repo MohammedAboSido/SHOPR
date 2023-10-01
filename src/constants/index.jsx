@@ -3,4 +3,6 @@ export const PATH = {
   HOME: "/home",
   REGISTER: "/register",
   LOGIN: "/login",
+  PRODUCTS: "/products",
+  PRODUCTDETAILS: "/product-details/:id",
 };

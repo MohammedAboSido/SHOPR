@@ -60,7 +60,7 @@ export const Typography = styled.p`
 export const StyledButton = styled(Button)`
   label: StyledButton;
   display: flex;
-  padding: 19px 44px;
+  padding: ${({ padding }) => (padding ? padding : "19px 44px")};
   justify-content: center;
   align-items: center;
   border-radius: 6px;
@@ -69,7 +69,7 @@ export const StyledButton = styled(Button)`
   text-align: center;
   font-family: "Space Grotesk", sans-serif;
   text-transform: none;
-  font-size: 22px;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "22px")};
   width: ${({ width }) => width};
   font-weight: 500;
   &:hover {
